@@ -4,8 +4,12 @@ A simple and easy to use password manager that runs out of python
 To whom it may concern
 
 This is a password manager type thing
+
+
 Its simple
+
 Its cool
+
 Its easy
 
 The general idea with this program was to have a simple and sleek solution for password managing. I didn't trust most current platforms since I'm not big on having my password stored on another person's server, so I kept these local (for now..).
