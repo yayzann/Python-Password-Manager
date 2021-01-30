@@ -43,7 +43,9 @@ words = ["elias", "john", "doe", "mr", "mustache", "jordan", "measure", "phone",
          "razor", "haze", "burial", "amazing", "penultimate",
          "incredible", "mongoose", "measurement", "computer", "linux", "debian", "manjaro", "overwatch", "hippopotamus",
          "hipocratic", "hypervigilant", "powercord", "notebook",
-         "foldingchair", "operation", "superman", "dragon", "bermuda", "arbutus", "selkirk", "lawnmower", "eminem"]
+         "foldingchair", "operation", "superman", "dragon", "bermuda", "arbutus", "selkirk", "lawnmower", "eminem", "molly", "yeet"
+         "stronk", "underground", "rubber", "candle", "laptop", "desktop", "water", "airpods", "lamp", "lottery", "mula", "cash", "henny",
+         "smoke", "spot", "semi", "podracing", "homie", "ball", "astute", "wartime" ]
 
 print("The wordlist currently has", (len(words)), "words and counting!")
 print("Loading Password Maker...")
@@ -166,12 +168,27 @@ if nu.casefold() == 'n'.casefold():
     print('Done!')
 
 elif nu.casefold() == 'u'.casefold():
-    #prePass = input("What is your encrypted password?: ")
+    ##prePass = input("What is your encrypted password?: ")
     ##userKey = int(input("And what is your encryption key?: "))
-    prePass = input("What is your full encrypted password? (copy the line from password file): ")
-    userKey = prePass[len(prePass)-1:]
+    #prePass = input("What is your full encrypted password? (copy the line from password file): ")
+    fetchPass = input("What's the name of your saved password?: ")
+    search = open("password.txt")
+    for line in search:
+        if fetchPass in line:
+            search = line
+    passNum = len(fetchPass)
+    passNum = int(passNum+3)
+    ##test
+    ##print(passNum)
+    print("Checking Local Database...")
+    sleep(.3)
+    print("...")
+    print("Done!")
+    prePass = search[passNum:]
+    prePass = str(prePass)
+    userKey = prePass[len(prePass)-2]
     userKey = int(userKey)
     userKey = userKey * (-1)
     # uses previous functions but reversed to enencrypt
     unencryptedPP = reverseString(prePass)
-    print(unencryptedPP)
+    print('Your password is:',unencryptedPP)
